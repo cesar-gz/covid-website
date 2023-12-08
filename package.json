@@ -1,12 +1,13 @@
 {
-  "name": "gatsby-starter-leaflet",
-  "title": "Gatsby Starter Leaflet",
-  "description": "A Gatsby starter with Leafet!",
+  "homepage": "https://cesar-gz.github.io/covid-website",
+  "name": "covid-website",
+  "title": "Covid Website",
+  "description": "A website on the statistics on Covid",
   "version": "0.3.0",
   "author": {
-    "name": "Colby Fayock",
-    "email": "hello@colbyfayock.com",
-    "url": "https://twitter.com/colbyfayock"
+    "name": "Cesar Gutierrez, Wesley Chok, Darren Chen, Oscar Cisneros",
+    "email": "hello@example.com",
+    "url": "https://example.com"
   },
   "dependencies": {
     "axios": "^1.6.2",
@@ -29,6 +30,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.4.0",
     "react-leaflet": "^4.0.0",
+    "react-scripts": "^5.0.1",
     "sass": "^1.52.3"
   },
   "devDependencies": {
@@ -59,9 +61,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
-    "build": "gatsby build --log-pages",
+    "build": "gatsby build && mkdir build && mv public/* build/",
     "bump": "npm version",
     "clean": "gatsby clean",
     "cy:open": "cypress open",
@@ -88,10 +90,9 @@
       "yarn lint"
     ]
   },
-  "homepage": "https://cesar-gz.github.io/covid-website",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cesar-gz/Web-Frontend-Class"
+    "url": "https://github.com/cesar-gz/covid-website"
   },
   "bugs": {
     "url": "https://github.com/colbyfayock/gatsby-starter-leaflet/issues"
