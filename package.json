@@ -88,7 +88,7 @@
       "yarn lint"
     ]
   },
-  "homepage": "https://cesar-gz.io/covid-website",
+  "homepage": "https://cesar-gz.github.io/covid-website",
   "repository": {
     "type": "git",
     "url": "https://github.com/cesar-gz/Web-Frontend-Class"
