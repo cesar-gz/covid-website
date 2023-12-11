@@ -3,28 +3,30 @@ body {
 }
 
 .table {
-  width: 100%;
   border-collapse: collapse;
   text-align: left;
 
 }
 
 .table-container {
-  margin: 20px;
-  width: auto;
-  height: 400px;
+  /* width: auto; */
+  max-height: 400px;
   overflow: auto;
   display: flex;
   justify-content: center;
 }
 
 .custom-table {
-  width: 100%;
   border-collapse: collapse;
+  width: 20%;
 }
 
 .custom-table th,
 .custom-table td {
   border: 1px solid #ddd;
   padding: 8px;
+}
+
+h1 {
+  text-align: center;
 }
