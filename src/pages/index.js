@@ -9,19 +9,20 @@ import { promiseToFlyTo, getCurrentLocation } from "lib/map";
 import Layout from "components/Layout";
 import Container from "components/Container";
 import Map from "components/Map";
+import Table from "components/Table";
 
 import axios from 'axios';
 
 const LOCATION = { lat: 0, lng: 0 };   // middle of the world
-  // { lat: 38.9072, lng: -77.0369 };  // in Los Angeles
+// { lat: 38.9072, lng: -77.0369 };  // in Los Angeles
 
-  const CENTER = [LOCATION.lat, LOCATION.lng];
+const CENTER = [LOCATION.lat, LOCATION.lng];
 const DEFAULT_ZOOM = 2;
 const ZOOM = 10;
 
 const timeToZoom = 2000;
 
-function countryPointToLayer (feature = {}, latlng) { 
+function countryPointToLayer(feature = {}, latlng) {
   const { properties = {} } = feature;
   let updatedFormatted;
   let casesString;
@@ -29,17 +30,17 @@ function countryPointToLayer (feature = {}, latlng) {
   const {
     country,
     updated,
-    cases, 
+    cases,
     deaths,
     recovered
   } = properties;
 
   casesString = `${cases}`;
 
-  if      (cases > 1000000) { casesString = `${casesString.slice(0, -6)}M+`; }
-  else if (cases > 1000)    { casesString = `${casesString.slice(0, -3)}k+`;  }
-  
-  if (updated)      { updatedFormatted = new Date(updated).toLocaleString(); }
+  if (cases > 1000000) { casesString = `${casesString.slice(0, -6)}M+`; }
+  else if (cases > 1000) { casesString = `${casesString.slice(0, -3)}k+`; }
+
+  if (updated) { updatedFormatted = new Date(updated).toLocaleString(); }
 
   const html = `
     <span class="icon-marker">
@@ -52,7 +53,7 @@ function countryPointToLayer (feature = {}, latlng) {
           <li><strong>Last Update:</strong> ${updatedFormatted}</li>
         </ul>
       </span>
-      ${casesString} 
+      ${casesString}
     </span>
   `;
 
@@ -94,13 +95,14 @@ const MapEffect = ({ markerRef }) => {
         //   'Disease.sh': 'disease.sh'
         // }
       };
-      
-      let response; 
-      
-      try { response = await axios.request(options); 
-      } catch (error) { 
-        console.error(error);  
-        return; 
+
+      let response;
+
+      try {
+        response = await axios.request(options);
+      } catch (error) {
+        console.error(error);
+        return;
       }
       console.log(response.data);
       // const rdr = response.data.response;    // for rapidapi
@@ -111,12 +113,12 @@ const MapEffect = ({ markerRef }) => {
       if (!Array.isArray(data)) { console.log('not an array!'); return; }
       if (data.length === 0) { console.log('data length is === 0'); }
 
-      if (!hasData) { console.log('No data, sorry!');  return; }
+      if (!hasData) { console.log('No data, sorry!'); return; }
 
       const geoJson = {
         type: 'FeatureCollection',
         features: data.map((country = {}) => {
-          const {countryInfo = {} } = country;
+          const { countryInfo = {} } = country;
           const { lat, long: lng } = countryInfo;
           return {
             type: 'Feature',
@@ -125,7 +127,7 @@ const MapEffect = ({ markerRef }) => {
             },
             geometry: {
               type: 'Point',
-              coordinates: [ lng, lat]
+              coordinates: [lng, lat]
             }
           }
         })
@@ -133,7 +135,7 @@ const MapEffect = ({ markerRef }) => {
 
       console.log('geoJson', geoJson);
 
-      const geoJsonLayers = new L.GeoJSON(geoJson, { 
+      const geoJsonLayers = new L.GeoJSON(geoJson, {
         pointToLayer: countryPointToLayer
       });
       var _map = markerRef.current._map;
@@ -170,10 +172,10 @@ const IndexPage = () => {
       {/* do not delete MapEffect and Marker
              with current code or axios will not run */}
       <Map {...mapSettings}>
-       <MapEffect markerRef={markerRef} />            
-       <Marker ref={markerRef} position={CENTER} />
+        <MapEffect markerRef={markerRef} />
+        <Marker ref={markerRef} position={CENTER} />
       </Map>
-
+      <Table />
       <Container type="content" className="text-center home-start">
         <h2>Still Getting Started?</h2>
       </Container>

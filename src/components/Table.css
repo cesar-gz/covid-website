@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+
+}
+
+.table-container {
+  margin: 20px;
+  width: auto;
+  height: 400px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
