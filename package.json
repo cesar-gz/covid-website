@@ -80,17 +80,6 @@
     "test:e2e:open": "start-server-and-test develop http://localhost:8000 cy:open",
     "test:e2e:run": "start-server-and-test develop http://localhost:8000 cy:run"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.js": [
-      "yarn format:nopath",
-      "yarn lint"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/cesar-gz/covid-website"

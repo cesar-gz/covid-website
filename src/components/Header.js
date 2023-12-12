@@ -13,7 +13,7 @@ const Header = () => {
     <header>
       <Container type="content">
         <p>
-          <Link to="/">{companyName}</Link>
+          <Link to="/" style={{ color: 'white' }}>{companyName}</Link>
         </p>
         <ul>
           <li>

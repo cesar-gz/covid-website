@@ -2,8 +2,8 @@ import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import L from "leaflet";
+import axios from 'axios';
 import { Marker, useMap } from "react-leaflet";
-
 import { promiseToFlyTo, getCurrentLocation } from "lib/map";
 
 import Layout from "components/Layout";
@@ -11,15 +11,13 @@ import Container from "components/Container";
 import Map from "components/Map";
 import Table from "components/Table";
 
-import axios from 'axios';
-
-const LOCATION = { lat: 0, lng: 0 };   // middle of the world
-// { lat: 38.9072, lng: -77.0369 };  // in Los Angeles
+const LOCATION = { lat: 33.8823, lng: -117.8851 };    // Cal State Fullerton
+// const LOCATION = { lat: 0, lng: 0 };               // middle of the world
+// const LOCATION = { lat: 38.9072, lng: -77.0369 };  // in Los Angeles
 
 const CENTER = [LOCATION.lat, LOCATION.lng];
 const DEFAULT_ZOOM = 2;
-const ZOOM = 10;
-
+const ZOOM = 5;
 const timeToZoom = 2000;
 
 function countryPointToLayer(feature = {}, latlng) {
@@ -67,14 +65,12 @@ function countryPointToLayer(feature = {}, latlng) {
 }
 
 const MapEffect = ({ markerRef }) => {
-  console.log('in MapEffect...');
   const map = useMap();
 
   useEffect(() => {
     if (!markerRef.current || !map) return;
 
     (async function run() {
-      console.log('about to call axios to get the data...');
 
       // const options = {
       //   method: 'GET',
@@ -157,7 +153,6 @@ MapEffect.propTypes = {
 };
 
 const IndexPage = () => {
-  console.log('in IndexPage, before useRef');
   const markerRef = useRef();
 
   const mapSettings = {
@@ -169,12 +164,10 @@ const IndexPage = () => {
   return (
     <Layout pageName="home">
       <Helmet><title>Home Page</title></Helmet>
-      {/* do not delete MapEffect and Marker
-             with current code or axios will not run */}
-      <Map {...mapSettings}>
-        <MapEffect markerRef={markerRef} />
-        <Marker ref={markerRef} position={CENTER} />
-      </Map>
+        <Map {...mapSettings}>
+          <MapEffect markerRef={markerRef} />
+          <Marker ref={markerRef} position={CENTER} />
+        </Map>
       <Table />
       <Container type="content" className="text-center home-start">
         <h2>Still Getting Started?</h2>

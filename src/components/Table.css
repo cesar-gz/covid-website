@@ -5,7 +5,9 @@ body {
 .table {
   border-collapse: collapse;
   text-align: left;
-
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .table-container {
@@ -21,12 +23,22 @@ body {
   width: 20%;
 }
 
+.custom-table th {
+  color: black;
+  background-color: #90a4ae;
+  border: 2px solid black;
+}
+
+.custom-table td {
+  border: 2px solid #90a4ae;
+}
+
 .custom-table th,
 .custom-table td {
-  border: 1px solid #ddd;
   padding: 8px;
 }
 
 h1 {
   text-align: center;
+  color: #fff;
 }
