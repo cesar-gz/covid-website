@@ -7,9 +7,11 @@ import { Marker, useMap } from "react-leaflet";
 import { promiseToFlyTo, getCurrentLocation } from "lib/map";
 
 import Layout from "components/Layout";
-import Container from "components/Container";
+//import Container from "components/Container";
 import Map from "components/Map";
 import Table from "components/Table";
+import CovidChart from "components/CovidChart";
+import VaccinationChart from "components/VaccineChart";
 
 const LOCATION = { lat: 33.8823, lng: -117.8851 };    // Cal State Fullerton
 // const LOCATION = { lat: 0, lng: 0 };               // middle of the world
@@ -169,9 +171,11 @@ const IndexPage = () => {
           <Marker ref={markerRef} position={CENTER} />
         </Map>
       <Table />
-      <Container type="content" className="text-center home-start">
-        <h2>Still Getting Started?</h2>
-      </Container>
+      <br></br>
+      <CovidChart />
+      <br></br>
+      <h3 className="vaccinations">Vaccinations Over Time</h3>
+      <VaccinationChart />
     </Layout>
   );
 };

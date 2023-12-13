@@ -13,9 +13,9 @@ body {
 .table-container {
   /* width: auto; */
   max-height: 400px;
-  overflow: auto;
   display: flex;
   justify-content: center;
+  overflow: auto;
 }
 
 .custom-table {
@@ -41,4 +41,17 @@ body {
 h1 {
   text-align: center;
   color: #fff;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.table-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.table-container {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
