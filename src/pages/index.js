@@ -176,9 +176,9 @@ const IndexPage = () => {
       <br></br>
       <h3 className="title-for-graph">Country Vaccinations Over Time</h3>
       <VaccinationChart />
-      <h3 className="title-for-graph">Covid Cases Per State</h3>
+      <h3 className="title-for-graph">Last Reported Covid Cases Per State</h3>
       <StateCovidChart state="New York" />
-      <h3 className="title-for-graph">Deaths Per Country</h3>
+      <h3 className="title-for-graph">Covid Deaths Per Country</h3>
       <CountryPieChart />
     </Layout>
   );

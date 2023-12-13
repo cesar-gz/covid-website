@@ -43,7 +43,7 @@ const StateCovidChart = () => {
         },
         scales: {
             x: {
-                stacked: false, // Set to false for grouped bars
+                stacked: false,
                 grid: {
                     display: false,
                 },
@@ -71,11 +71,11 @@ const StateCovidChart = () => {
     };
 
     const statesToPlot = [
-    'California', 'Texas', 'New York', 'North Dakota', 'Missouri',
-    'Florida', 'Washington', 'Georgia', 'Pennsylvania', 'Ohio',
-    'Michigan', 'Virginia', 'Arizona', 'Massachusetts', 'Tennessee',
+    'California', 'Texas', 'Florida', 'New York', 'Pennsylvania',
+    'Ohio', 'Michigan', 'Georgia', 'Missouri',
+    'Washington', 'Virginia', 'Arizona', 'Massachusetts', 'Tennessee',
     'Indiana', 'Wisconsin', 'Colorado', 'Minnesota', 'South Carolina',
-    'Alabama', 'Louisiana', 'Kentucky', 'Oregon', 'Oklahoma'
+    'Alabama', 'Louisiana', 'Kentucky', 'Oklahoma', 'Oregon', 'North Dakota',
     ];
 
     const colors = [
