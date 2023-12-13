@@ -38,7 +38,7 @@ const CovidChart = () => {
     const fetchData = async () => {
         try {
             const response = await axios.get('https://disease.sh/v3/covid-19/historical/all?lastdays=all');
-            console.log(response)
+            //console.log(response)
             const dates = Object.keys(response.data.cases);
             const caseCounts = Object.values(response.data.cases);
 
@@ -46,7 +46,7 @@ const CovidChart = () => {
                 labels: dates,
                 datasets: [
                     {
-                        label: 'Global COVID-19 Cases Over Time',
+                        label: 'COVID-19 Cases',
                         data: caseCounts,
                         backgroundColor: '#b71c1c',
                         borderColor: '#f44336',

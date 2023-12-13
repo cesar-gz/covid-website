@@ -12,6 +12,8 @@ import Map from "components/Map";
 import Table from "components/Table";
 import CovidChart from "components/CovidChart";
 import VaccinationChart from "components/VaccineChart";
+import StateCovidChart from "components/StateCovidChart";
+import CountryPieChart from "components/CountryPieChart";
 
 const LOCATION = { lat: 33.8823, lng: -117.8851 };    // Cal State Fullerton
 // const LOCATION = { lat: 0, lng: 0 };               // middle of the world
@@ -19,7 +21,7 @@ const LOCATION = { lat: 33.8823, lng: -117.8851 };    // Cal State Fullerton
 
 const CENTER = [LOCATION.lat, LOCATION.lng];
 const DEFAULT_ZOOM = 2;
-const ZOOM = 5;
+const ZOOM = 10;
 const timeToZoom = 2000;
 
 function countryPointToLayer(feature = {}, latlng) {
@@ -102,7 +104,7 @@ const MapEffect = ({ markerRef }) => {
         console.error(error);
         return;
       }
-      console.log(response.data);
+      // console.log(response.data);
       // const rdr = response.data.response;    // for rapidapi
       // const data = rdr;
 
@@ -130,8 +132,6 @@ const MapEffect = ({ markerRef }) => {
           }
         })
       }
-
-      console.log('geoJson', geoJson);
 
       const geoJsonLayers = new L.GeoJSON(geoJson, {
         pointToLayer: countryPointToLayer
@@ -171,11 +171,15 @@ const IndexPage = () => {
           <Marker ref={markerRef} position={CENTER} />
         </Map>
       <Table />
-      <br></br>
+      <h3 className="title-for-graph">Total Global Covid Case Count</h3>
       <CovidChart />
       <br></br>
-      <h3 className="vaccinations">Vaccinations Over Time</h3>
+      <h3 className="title-for-graph">Country Vaccinations Over Time</h3>
       <VaccinationChart />
+      <h3 className="title-for-graph">Covid Cases Per State</h3>
+      <StateCovidChart state="New York" />
+      <h3 className="title-for-graph">Deaths Per Country</h3>
+      <CountryPieChart />
     </Layout>
   );
 };

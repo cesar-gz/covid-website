@@ -76,6 +76,13 @@ const VaccinationChart = () => {
                         borderColor: 'rgb(0, 104, 71)',
                         backgroundColor: 'rgb(0, 104, 71)',
                         tension: 0.1,
+                    },
+                    {
+                        label: 'Germany',
+                        data: extractDataForCountry('Germany'),
+                        borderColor: 'rgb(201, 203, 207)',
+                        backgroundColor: 'rgb(201, 203, 207)',
+                        tension: 0.1,
                     }
                 ]
             });
