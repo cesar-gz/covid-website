@@ -10,6 +10,7 @@ import Layout from "components/Layout";
 //import Container from "components/Container";
 import Map from "components/Map";
 import Table from "components/Table";
+import CovidDailyTable from "../components/CovidDailyTable";
 import CovidChart from "components/CovidChart";
 import VaccinationChart from "components/VaccineChart";
 import StateCovidChart from "components/StateCovidChart";
@@ -172,6 +173,7 @@ const IndexPage = () => {
         </Map>
       <Table />
       <h3 className="title-for-graph">Total Global Covid Case Count</h3>
+      <CovidDailyTable />
       <CovidChart />
       <br></br>
       <h3 className="title-for-graph">Country Vaccinations Over Time</h3>
