@@ -12,7 +12,6 @@
   "dependencies": {
     "axios": "^1.6.2",
     "chart.js": "^4.4.1",
-    "cypress": "^10.1.0",
     "gatsby": "^4.16.0",
     "gatsby-cli": "^5.12.4",
     "gatsby-plugin-manifest": "^4.16.0",
@@ -48,7 +47,6 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "gh-pages": "^6.1.0",
     "husky": "4.3.8",
-    "jest": "^28.1.1",
     "lint-staged": "^13.0.1",
     "prettier": "^2.7.0",
     "prettier-eslint": "^15.0.1",
@@ -67,18 +65,12 @@
     "build": "gatsby build",
     "bump": "npm version",
     "clean": "gatsby clean",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run --headless",
-    "cy:verify": "cypress verify",
     "develop": "gatsby develop",
     "format": "prettier-eslint --eslint-config-path $PWD/config/eslint.config.js --write $PWD/'**/*.js'",
     "format:nopath": "prettier-eslint --eslint-config-path $PWD/config/eslint.config.js --write",
     "lint": "eslint -c ./config/eslint.config.js . --ext .js",
     "start": "yarn develop",
-    "serve": "gatsby serve",
-    "test": "jest --config ./config/jest.config.js",
-    "test:e2e:open": "start-server-and-test develop http://localhost:8000 cy:open",
-    "test:e2e:run": "start-server-and-test develop http://localhost:8000 cy:run"
+    "serve": "gatsby serve"
   },
   "repository": {
     "type": "git",
