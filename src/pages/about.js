@@ -28,6 +28,25 @@ const SecondPage = () => {
         <p>
           <a href={authorUrl}>{authorName}</a>
         </p>
+
+        <h2>Sources</h2>
+<p>
+  COVID-19 data is sourced from the following APIs:
+</p>
+<ol>
+  <li>
+    <a href="https://disease.sh/" target="_blank" rel="noopener noreferrer">
+      Open Disease Data API
+    </a>{" "}
+    by Novel Covid19 API
+  </li>
+  <li>
+    <a href="https://api.covidtracking.com" target="_blank" rel="noopener noreferrer">
+      COVID Tracking Project API
+    </a>{" "}
+    by The Covid Tracking Project
+  </li>
+</ol>
       </Container>
     </Layout>
   );
