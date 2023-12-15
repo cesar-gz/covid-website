@@ -41,6 +41,30 @@ const SecondPage = () => {
     by Novel Covid19 API
   </li>
   <li>
+    <a href="https://disease.sh/" target="_blank" rel="noopener noreferrer">
+      COVID-19 Worldwide
+    </a>{" "}
+    by Novel Covid19 API
+  </li>
+  <li>
+    <a href="https://disease.sh/" target="_blank" rel="noopener noreferrer">
+      COVID-19 History
+    </a>{" "}
+    by Novel Covid19 API
+  </li>
+            <li>
+    <a href="https://disease.sh/" target="_blank" rel="noopener noreferrer">
+      COVID-19 Vaccines Worldwide
+    </a>{" "}
+    by Novel Covid19 API
+   </li>
+   <li>
+    <a href="https://disease.sh/" target="_blank" rel="noopener noreferrer">
+      COVID-19 USA
+    </a>{" "}
+    by Novel Covid19 API
+  </li>
+  <li>
     <a href="https://api.covidtracking.com" target="_blank" rel="noopener noreferrer">
       COVID Tracking Project API
     </a>{" "}

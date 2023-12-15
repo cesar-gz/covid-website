@@ -48,7 +48,7 @@ function Table() {
 
   return (
     <div>
-      <h1>COVID-19 Data Worldwide</h1>
+      <h1 className="title">COVID-19 Worldwide Data</h1>
       <div className="table-container">
         <div className="table-wrapper">
           <div className="table">

@@ -52,15 +52,16 @@ const CountryPieChart = () => {
       <div
         style={{
           display: 'flex',
-          justifyContent: 'center', // Horizontal centering
-          alignItems: 'center',     // Vertical centering (optional)
-          width: '100vw',           // Full viewport width
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100vw',
+          marginBottom: '20px'
         }}
       >
         <div
           style={{
-            width: '500px',
-            height: '500px',
+            width: '400px',
+            height: '400px',
           }}
         >
           <Pie data={chartData} />

@@ -7,18 +7,16 @@ import { Marker, useMap } from "react-leaflet";
 import { promiseToFlyTo, getCurrentLocation } from "lib/map";
 
 import Layout from "components/Layout";
-//import Container from "components/Container";
 import Map from "components/Map";
-import Table from "components/Table";
-import CovidDailyTable from "../components/CovidDailyTable";
 import CovidChart from "components/CovidChart";
 import VaccinationChart from "components/VaccineChart";
 import StateCovidChart from "components/StateCovidChart";
 import CountryPieChart from "components/CountryPieChart";
+import Dashboard from "components/Dashboard";
 
 const LOCATION = { lat: 33.8823, lng: -117.8851 };    // Cal State Fullerton
 // const LOCATION = { lat: 0, lng: 0 };               // middle of the world
-// const LOCATION = { lat: 38.9072, lng: -77.0369 };  // in Los Angeles
+// const LOCATION = { lat: 38.9072, lng: -77.0369 };  // Los Angeles
 
 const CENTER = [LOCATION.lat, LOCATION.lng];
 const DEFAULT_ZOOM = 2;
@@ -171,11 +169,9 @@ const IndexPage = () => {
           <MapEffect markerRef={markerRef} />
           <Marker ref={markerRef} position={CENTER} />
         </Map>
-      <Table />
+      <Dashboard />
       <h3 className="title-for-graph">Total Global Covid Case Count</h3>
-      <CovidDailyTable />
       <CovidChart />
-      <br></br>
       <h3 className="title-for-graph">Country Vaccinations Over Time</h3>
       <VaccinationChart />
       <h3 className="title-for-graph">Last Reported Covid Cases Per State</h3>
