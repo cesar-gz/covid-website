@@ -83,3 +83,25 @@
   color: white;
   text-align: center;
 }
+
+.dashboard {
+  display: grid;
+  background-color: #081217;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #263238;
+}
+
+.dashboard-slot {
+  background-color: #081217;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #263238;
+  border-top: 1px solid #263238;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  overflow-x: auto;
+}

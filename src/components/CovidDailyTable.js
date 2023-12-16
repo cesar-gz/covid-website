@@ -34,7 +34,7 @@ function CovidDailyTable() {
         accessor: "death",
       },
       {
-        Header: "Total Tests",
+        Header: "Total-Tests",
         accessor: "totalTestResults",
       },
     ],
@@ -46,7 +46,7 @@ function CovidDailyTable() {
 
   return (
     <div>
-      <h1>COVID-19 Daily Data in the US</h1>
+      <h1 className="title">COVID-19 USA Daily Data</h1>
       <div className="table-container">
         <div className="table-wrapper">
           <div className="table">

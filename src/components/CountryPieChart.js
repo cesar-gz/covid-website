@@ -78,17 +78,13 @@ const CountryPieChart = () => {
     fetchData();
   }, []);
 
-  return (
-    <div>
-      <div
-        style={{
-          width: "500px",
-          height: "500px",
-        }}
-      >
-        <Pie data={chartData} />
+    return (
+      <div>
+        <div>
+          <h3 className="title-for-graph">Covid Deaths Per Country</h3>
+          <Pie data={chartData} />
+        </div>
       </div>
-    </div>
   );
 };
 

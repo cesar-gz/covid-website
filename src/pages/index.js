@@ -1,27 +1,22 @@
-import axios from "axios";
-import CountryPieChart from "components/CountryPieChart";
-import CovidChart from "components/CovidChart";
-import Layout from "components/Layout";
-// import Container from "components/Container";
-import Map from "components/Map";
-import StateCovidChart from "components/StateCovidChart";
-import Table from "components/Table";
-import VaccinationChart from "components/VaccineChart";
-import L from "leaflet";
-import { getCurrentLocation, promiseToFlyTo } from "lib/map";
+import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import React, { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
+import L from "leaflet";
+import axios from 'axios';
 import { Marker, useMap } from "react-leaflet";
+import { promiseToFlyTo, getCurrentLocation } from "lib/map";
 
-import CovidDailyTable from "../components/CovidDailyTable";
-import OrangeCountyFigures from "../components/OrangeCountyFigures";
+import Layout from "components/Layout";
+import Map from "components/Map";
+import CovidChart from "components/CovidChart";
+import VaccinationChart from "components/VaccineChart";
+import StateCovidChart from "components/StateCovidChart";
+import Dashboard from "components/Dashboard";
+import DashboardTwo from "components/DashboardTwo";
 
-const locations = {
-  csuf: { lat: 33.8823, lng: -117.8851 },
-  lac: { lat: 38.9072, lng: -77.0369 },
-  current: { lat: 0, lng: 0 },
-};
+const LOCATION = { lat: 33.8823, lng: -117.8851 };    // Cal State Fullerton
+// const LOCATION = { lat: 0, lng: 0 };               // middle of the world
+// const LOCATION = { lat: 38.9072, lng: -77.0369 };  // Los Angeles
 
 const DEFAULT_ZOOM = 2;
 const ZOOM = 10;
@@ -160,43 +155,19 @@ const IndexPage = () => {
 
   return (
     <Layout pageName="home">
-      <Helmet>
-        <title>Home Page</title>
-      </Helmet>
-      <Map {...mapSettings}>
-        <MapEffect markerRef={markerRef} />
-        <Marker ref={markerRef} position={mapCenter} />
-      </Map>
-      <div className="inline-charts">
-        <div className="row">
-          <div className="chart-col">
-            <div className="col-content">
-              <Table />
-            </div>
-          </div>
-          <div className="chart-col">
-            <div className="col-content">
-              <CovidDailyTable />
-            </div>
-          </div>
-          <div className="chart-col-1">
-            <div className="col-content">
-              <h1>Covid Cases Per Country</h1>
-              <CountryPieChart />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Helmet><title>Home Page</title></Helmet>
+        <Map {...mapSettings}>
+          <MapEffect markerRef={markerRef} />
+          <Marker ref={markerRef} position={CENTER} />
+        </Map>
+      <Dashboard />
+      <DashboardTwo />
       <h3 className="title-for-graph">Total Global Covid Case Count</h3>
       <CovidChart />
-      <br></br>
       <h3 className="title-for-graph">Country Vaccinations Over Time</h3>
       <VaccinationChart />
       <h3 className="title-for-graph">Last Reported Covid Cases Per State</h3>
       <StateCovidChart state="New York" />
-      <div>
-        <OrangeCountyFigures />
-      </div>
     </Layout>
   );
 };
