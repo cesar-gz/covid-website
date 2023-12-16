@@ -13,7 +13,9 @@ const Header = () => {
     <header>
       <Container type="content">
         <p>
-          <Link to="/" style={{ color: 'white' }}>{companyName}</Link>
+          <Link to="/" style={{ color: "white" }}>
+            {companyName}
+          </Link>
         </p>
         <ul>
           <li>

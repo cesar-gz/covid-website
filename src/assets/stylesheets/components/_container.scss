@@ -7,3 +7,34 @@
   max-width: 60em;
   padding: 0 1em;
 }
+
+.inline-charts {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex: left;
+  min-width: 100%;
+  margin: 0 auto;
+}
+.chart-col {
+  justify-content: center;
+  align-items: center;
+  min-width: 33.33%;
+}
+
+.chart-content {
+  font-size: x-large;
+  min-width: 100%;
+}
+
+.figures-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  background-color: white;
+};
