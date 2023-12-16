@@ -49,21 +49,9 @@ const CountryPieChart = () => {
     }, []);
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100vw',
-          marginBottom: '20px'
-        }}
-      >
-        <div
-          style={{
-            width: '400px',
-            height: '400px',
-          }}
-        >
+      <div>
+        <div>
+          <h3 className="title-for-graph">Covid Deaths Per Country</h3>
           <Pie data={chartData} />
         </div>
       </div>

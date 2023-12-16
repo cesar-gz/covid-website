@@ -11,8 +11,8 @@ import Map from "components/Map";
 import CovidChart from "components/CovidChart";
 import VaccinationChart from "components/VaccineChart";
 import StateCovidChart from "components/StateCovidChart";
-import CountryPieChart from "components/CountryPieChart";
 import Dashboard from "components/Dashboard";
+import DashboardTwo from "components/DashboardTwo";
 
 const LOCATION = { lat: 33.8823, lng: -117.8851 };    // Cal State Fullerton
 // const LOCATION = { lat: 0, lng: 0 };               // middle of the world
@@ -170,14 +170,13 @@ const IndexPage = () => {
           <Marker ref={markerRef} position={CENTER} />
         </Map>
       <Dashboard />
+      <DashboardTwo />
       <h3 className="title-for-graph">Total Global Covid Case Count</h3>
       <CovidChart />
       <h3 className="title-for-graph">Country Vaccinations Over Time</h3>
       <VaccinationChart />
       <h3 className="title-for-graph">Last Reported Covid Cases Per State</h3>
       <StateCovidChart state="New York" />
-      <h3 className="title-for-graph">Covid Deaths Per Country</h3>
-      <CountryPieChart />
     </Layout>
   );
 };

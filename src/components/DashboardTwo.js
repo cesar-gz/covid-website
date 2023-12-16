@@ -1,24 +1,24 @@
 import React from 'react';
-import Table from './Table';
-import CovidDailyTable from './CovidDailyTable';
+import CountryPieChart from './CountryPieChart';
+import CovidContinentsChart from './ContinentsGraph';
+import GradientPieChart from './GradientGraph';
 
-const Dashboard = () => {
+const DashboardTwo = () => {
     return (
         <div>
             <div className="dashboard">
                 <div className="dashboard-slot">
-                    <Table />
+                    <CountryPieChart />
                 </div>
                 <div className="dashboard-slot">
-                    <CovidDailyTable />
+                    <CovidContinentsChart />
                 </div>
                 <div className="dashboard-slot">
-                    <h3 className="title-for-graph">placeholder for chart</h3>
-                    {/* third chart component goes here */}
+                    <GradientPieChart />
                 </div>
             </div>
         </div>
     );
 };
 
-export default Dashboard;
+export default DashboardTwo;
