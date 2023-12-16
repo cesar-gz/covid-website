@@ -8,10 +8,10 @@ const DashboardTwo = () => {
         <div>
             <div className="dashboard">
                 <div className="dashboard-slot">
-                    <CountryPieChart />
+                    <CovidContinentsChart />
                 </div>
                 <div className="dashboard-slot">
-                    <CovidContinentsChart />
+                    <CountryPieChart />
                 </div>
                 <div className="dashboard-slot">
                     <GradientPieChart />

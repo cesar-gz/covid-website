@@ -161,8 +161,9 @@ const IndexPage = () => {
         </Map>
       <Dashboard />
       <DashboardTwo />
-      <h3 className="title-for-graph">Total Global Covid Case Count</h3>
+      <h3 className="title-for-graph">Orange County COVID-19 New Deaths Chart</h3>
       <OCChart />
+      <h3 className="title-for-graph">Total Global Covid Case Count</h3>
       <CovidChart />
       <h3 className="title-for-graph">Country Vaccinations Over Time</h3>
       <VaccinationChart />

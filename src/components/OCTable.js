@@ -39,7 +39,7 @@ export default function OCTable() {
   }, []);
 
   return (
-      <div><h1 className="title">Orange County COVID-19 Data</h1>
+      <div><h1 className="title">COVID-19 Orange County Data</h1>
       <div className="table-container">
         <div className="table-wrapper">
           <div className="table">

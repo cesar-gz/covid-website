@@ -72,7 +72,6 @@ export function OCChart() {
   }, []);
   return (
     <div className="chart-container">
-        <h1>Orange County COVID-19 New Deaths Chart</h1>
         <Bar data={chartData} />
       </div>
   )
