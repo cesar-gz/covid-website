@@ -121,9 +121,7 @@ const MapEffect = ({ markerRef }) => {
       var _map = markerRef.current._map;
       geoJsonLayers.addTo(_map);
 
-      const location = await getCurrentLocation().catch(
-        () => locations.current
-      );
+      const location = await getCurrentLocation().catch(console.error('error'));
 
       setTimeout(async () => {
         await promiseToFlyTo(map, {
@@ -144,8 +142,8 @@ MapEffect.propTypes = {
 const IndexPage = () => {
   const markerRef = useRef();
   const [mapCenter, setCenter] = React.useState([
-    locations.current.lat,
-    locations.current.lng,
+    LOCATION.lat,
+    LOCATION.lng,
   ]);
   const mapSettings = {
     center: mapCenter,
@@ -158,7 +156,7 @@ const IndexPage = () => {
       <Helmet><title>Home Page</title></Helmet>
         <Map {...mapSettings}>
           <MapEffect markerRef={markerRef} />
-          <Marker ref={markerRef} position={CENTER} />
+          <Marker ref={markerRef} position={mapCenter} />
         </Map>
       <Dashboard />
       <DashboardTwo />

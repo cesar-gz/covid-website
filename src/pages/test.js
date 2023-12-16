@@ -1,11 +1,12 @@
 import React, { Suspense } from "react";
-import OrangeCountyFigures from "../components/OrangeCountyFigures";
+import {OCTable, OCChart} from "../components/OrangeCountyFigures";
 
 export default function TestPage() {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <OrangeCountyFigures />
+        <OCChart />
+        <OCTable />
       </Suspense>
     </div>
   );

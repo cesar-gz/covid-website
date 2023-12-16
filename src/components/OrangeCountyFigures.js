@@ -30,7 +30,7 @@ async function fetchCovidData() {
   }
 }
 
-export default function OrangeCountyFigures() {
+export function OCChart() {
   const [chartData, setChartData] = useState({
     labels: [],
     datasets: [
@@ -43,6 +43,41 @@ export default function OrangeCountyFigures() {
       },
     ],
   });
+
+  useEffect(() => {
+    let ignore = false;
+    fetchCovidData().then((data) => {
+      if (!ignore) {
+        // set chart data
+        const dates = data.data.map((row) => row[1]);
+        const deaths = data.data.map((row) => row[17] || 0);
+
+        setChartData({
+          labels: dates.slice(90, 863),
+          datasets: [
+            {
+              label: "Cumulative Deaths",
+              data: deaths.slice(90, 863),
+              backgroundColor: "#b71c1c",
+              borderColor: "#f44336",
+              borderWidth: 1,
+            },
+          ],
+        });
+      }
+    });
+    return () => {
+      ignore = true;
+    };
+  }, []);
+  return (
+    <div className="chart-container">
+        <h1>Orange County COVID-19 New Deaths Chart</h1>
+        <Bar data={chartData} />
+      </div>
+  )
+}
+export function OCTable() {
   const [covidData, setCovidData] = useState([]);
   const columns = useMemo(
     () => [
@@ -62,22 +97,6 @@ export default function OrangeCountyFigures() {
     fetchCovidData().then((data) => {
       if (!ignore) {
         setCovidData(data.data);
-        // set chart data
-        const dates = data.data.map((row) => row[1]);
-        const deaths = data.data.map((row) => row[17] || 0);
-
-        setChartData({
-          lables: dates.slice(90, 863),
-          datasets: [
-            {
-              label: "Cumulative Deaths",
-              data: deaths.slice(90, 863),
-              backgroundColor: "#b71c1c",
-              borderColor: "#f44336",
-              borderWidth: 1,
-            },
-          ],
-        });
       }
     });
     return () => {
@@ -87,10 +106,6 @@ export default function OrangeCountyFigures() {
 
   return (
     <>
-      <div className="chart-container">
-        <h1>Orange County COVID-19 New Deaths Chart</h1>
-        <Bar data={chartData} />
-      </div>
       <div className="figures-container">
         <h1>Orange County COVID-19 Data Figures Table</h1>
         <div className="table-wrapper">
