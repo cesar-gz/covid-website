@@ -13,6 +13,7 @@ import VaccinationChart from "components/VaccineChart";
 import StateCovidChart from "components/StateCovidChart";
 import Dashboard from "components/Dashboard";
 import DashboardTwo from "components/DashboardTwo";
+import { OCChart } from "components/OrangeCountyFigures";
 
 const LOCATION = { lat: 33.8823, lng: -117.8851 };    // Cal State Fullerton
 // const LOCATION = { lat: 0, lng: 0 };               // middle of the world
@@ -161,6 +162,7 @@ const IndexPage = () => {
       <Dashboard />
       <DashboardTwo />
       <h3 className="title-for-graph">Total Global Covid Case Count</h3>
+      <OCChart />
       <CovidChart />
       <h3 className="title-for-graph">Country Vaccinations Over Time</h3>
       <VaccinationChart />

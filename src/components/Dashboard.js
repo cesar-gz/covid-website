@@ -1,6 +1,7 @@
 import React from 'react';
 import Table from './Table';
 import CovidDailyTable from './CovidDailyTable';
+import OCTable from './OCTable';
 
 const Dashboard = () => {
     return (
@@ -13,8 +14,7 @@ const Dashboard = () => {
                     <CovidDailyTable />
                 </div>
                 <div className="dashboard-slot">
-                    <h3 className="title-for-graph">placeholder for chart</h3>
-                    {/* third chart component goes here */}
+                    <OCTable />
                 </div>
             </div>
         </div>

@@ -70,6 +70,12 @@ const SecondPage = () => {
     </a>{" "}
     by The Covid Tracking Project
   </li>
+  <li>
+    <a href="https://storage.googleapis.com/covid19-open-data/v3/location/US_CA_06059.json" target="_blank" rel="noopener noreferrer">
+      COVID Orange County API
+    </a>{" "}
+    by Google Covid Code API
+  </li>
 </ol>
       </Container>
     </Layout>
